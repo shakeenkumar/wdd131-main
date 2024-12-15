@@ -1,45 +1,22 @@
-// Import necessary functions or variables if using ES Modules (not required in this case as no external modules are needed)
-
-// Array of Eco-Friendly Products
-const ecoProducts = [
-  { name: "Solar-Powered Lamp", description: "A lamp powered by solar energy." },
-  { name: "Bamboo Toothbrush", description: "A sustainable toothbrush made from bamboo." },
-  { name: "Reusable Water Bottle", description: "Eco-friendly bottle for daily use." }
-];
-
-// DOM Interaction: Add products to the Eco-Friendly Products list
-const productList = document.getElementById('productList');
-
-// Function to display eco-friendly products dynamically
-function displayProducts() {
-  ecoProducts.forEach(product => {
-    const li = document.createElement('li');
-    li.innerHTML = `<strong>${product.name}</strong>: ${product.description}`;
-    productList.appendChild(li);
-  });
-}
-
-// Event Listener for the "Show More Tips" Button
-const toggleBtn = document.getElementById('toggleBtn');
-const tipsSection = document.getElementById('tips-section');
-
-// Function to toggle the display of sustainability tips
-toggleBtn.addEventListener('click', () => {
-  if (tipsSection.style.display === 'none') {
-    tipsSection.style.display = 'block';
-    toggleBtn.textContent = 'Show Less Tips'; // Update button text
-  } else {
-    tipsSection.style.display = 'none';
-    toggleBtn.textContent = 'Show More Tips'; // Reset button text
-  }
+// Dynamic Tip Toggle Functionality
+document.getElementById('toggleBtn').addEventListener('click', function() {
+  const tipsSection = document.getElementById('tips-section');
+  const isVisible = tipsSection.style.display === 'block';
+  tipsSection.style.display = isVisible ? 'none' : 'block';
+  this.textContent = isVisible ? 'Show More Tips' : 'Show Less Tips';
+  this.setAttribute('aria-expanded', !isVisible);
 });
 
-// Call the function to display the eco-friendly products on page load
-displayProducts();
+// Populate Eco-Friendly Products List Dynamically
+const products = [
+  { name: 'Reusable Water Bottle', description: 'Stay hydrated, reduce plastic waste.' },
+  { name: 'Bamboo Toothbrush', description: 'Eco-friendly alternative to plastic.' },
+  { name: 'Compostable Plates', description: 'Perfect for eco-friendly parties.' }
+];
 
-// Example of conditional branching: If no products are available, display a message
-if (ecoProducts.length === 0) {
-  const noProductsMessage = document.createElement('p');
-  noProductsMessage.textContent = "No eco-friendly products available at the moment.";
-  productList.appendChild(noProductsMessage);
-}
+const productList = document.getElementById('productList');
+products.forEach(product => {
+  const li = document.createElement('li');
+  li.innerHTML = `<strong>${product.name}</strong>: ${product.description}`;
+  productList.appendChild(li);
+});
