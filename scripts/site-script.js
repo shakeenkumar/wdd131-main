@@ -1,10 +1,3 @@
-// module for product data
-export const products = [
-  { name: 'Reusable Water Bottle', description: 'Stay hydrated, reduce plastic waste.' },
-  { name: 'Bamboo Toothbrush', description: 'Eco-friendly alternative to plastic.' },
-  { name: 'Compostable Plates', description: 'Perfect for eco-friendly parties.' }
-];
-
 // Dynamic Tip Toggle Functionality
 document.getElementById('toggleBtn').addEventListener('click', function() {
   const tipsSection = document.getElementById('tips-section');
@@ -15,7 +8,11 @@ document.getElementById('toggleBtn').addEventListener('click', function() {
 });
 
 // Populate Eco-Friendly Products List Dynamically
-import { products } from './productData.js';
+const products = [
+  { name: 'Reusable Water Bottle', description: 'Stay hydrated, reduce plastic waste.' },
+  { name: 'Bamboo Toothbrush', description: 'Eco-friendly alternative to plastic.' },
+  { name: 'Compostable Plates', description: 'Perfect for eco-friendly parties.' }
+];
 
 const productList = document.getElementById('productList');
 products.forEach(product => {
