@@ -153,3 +153,17 @@ ul li strong {
     width: 100%;
   }
 }
+
+/* Navigation Links */
+nav a {
+  color: #283618; /* Primary color */
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+
+nav a:hover {
+  color: #fefae0; /* Accent color */
+  background-color: #606c38; /* Secondary color */
+  border-radius: 5px;
+}
