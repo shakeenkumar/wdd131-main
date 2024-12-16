@@ -6,7 +6,8 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif, Arial, sans-serif;
+font-family: 'Rock Salt', cursive, Georgia, serif;
   line-height: 1.6;
   background-color: #fefae0;
   color: #283618;
@@ -120,7 +121,7 @@ button:hover {
 }
 
 button:focus {
-  outline: none;
+  outline: 2px solid #bc6c25;
 }
 
 /* List Styling for Eco-Friendly Products */
